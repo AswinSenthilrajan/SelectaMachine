@@ -17,6 +17,7 @@ public class SelectaMachine {
     public static void main(String[] args) {
         Machine machine = new Machine();
         machine.addItemsToMachine();
+        machine.takeOrder();
     }
     
 }

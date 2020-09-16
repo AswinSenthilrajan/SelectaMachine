@@ -32,7 +32,7 @@ public class Machine {
     }
     
     public void takeOrder(){
-         numberInput = Integer.parseInt(JOptionPane.showInputDialog("Type the number."));
+         numberInput = Integer.parseInt(JOptionPane.showInputDialog("Type the number." + drinks));
         
         if(numberInput == 1){
             System.out.println("You've chosen Coke");
@@ -49,6 +49,7 @@ public class Machine {
         if(n == JOptionPane.YES_OPTION){
             takeOrder();
         }else if(n == JOptionPane.NO_OPTION){
+            JOptionPane.showConfirmDialog(null, "That makes" + price);
             payment = Double.parseDouble(JOptionPane.showInputDialog("Please insert your Coins"));
             giveChange(payment);
         }

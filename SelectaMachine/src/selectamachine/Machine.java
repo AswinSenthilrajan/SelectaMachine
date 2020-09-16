@@ -62,7 +62,20 @@ public class Machine {
         if(change < 0){
             System.out.println("Thats not enough Money");
         }else{
-            
+            System.out.println("You get " + change + " back");
+             if(change >= 5.0){
+                 change = change - 5.0;
+                 System.out.println("5.-");
+             }else if(change >= 2.0 && change < 5.0){
+                 change = change - 2.0;
+                 System.out.println("2.-");
+             }else if(change >= 1.0 && change < 2.0){
+                 change = change - 1;
+                 System.out.println("1.-");
+             }else if(change >= 0.5 && change < 1.0){
+                 change = change - 0.50;
+                 System.out.println("0.50.-");
+             }
         }
     }
 }

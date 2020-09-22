@@ -51,15 +51,15 @@ public class Machine {
         }else if(n == JOptionPane.NO_OPTION){
             JOptionPane.showConfirmDialog(null, "That makes" + price);
             payment = Double.parseDouble(JOptionPane.showInputDialog("Please insert your Coins"));
-            giveChange(payment);
+            change = payment - price;
+            giveChange(change);
         }
         
     }
     
     
-    public void giveChange(double payment){
-        this.payment = payment;
-        change = payment - price;
+    public void giveChange(double change){
+        
         if(change < 0){
             System.out.println("Thats not enough Money");
         }else{
@@ -67,15 +67,21 @@ public class Machine {
              if(change >= 5.0){
                  change = change - 5.0;
                  System.out.println("5.-");
+                 giveChange(change);
              }else if(change >= 2.0 && change < 5.0){
                  change = change - 2.0;
                  System.out.println("2.-");
+                 giveChange(change);
              }else if(change >= 1.0 && change < 2.0){
                  change = change - 1;
                  System.out.println("1.-");
+                 giveChange(change);
              }else if(change >= 0.5 && change < 1.0){
                  change = change - 0.50;
                  System.out.println("0.50.-");
+                 giveChange(change);
+             }else{
+                 System.out.println("Thank you!");
              }
         }
     }

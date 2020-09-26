@@ -34,9 +34,10 @@ public class Machine {
     public void takeOrder(){
          numberInput = Integer.parseInt(JOptionPane.showInputDialog("Type the number." + drinks));
         
+        
         if(numberInput == 1){
             System.out.println("You've chosen Coke");
-            price =price + 2.70;
+            price = price + 2.70;
         }else if(numberInput == 2){
             price = price + 1.40;
         }else if(numberInput == 3){
@@ -56,10 +57,9 @@ public class Machine {
         }
         
     }
-    
-    
+    //with greedy-methode
+    //Gives Back different Coins
     public void giveChange(double change){
-        
         if(change < 0){
             System.out.println("Thats not enough Money");
         }else{
